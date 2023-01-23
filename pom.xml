@@ -23,15 +23,15 @@
     </parent>
 
     <scm>
-        <connection>scm:git:https://github.com/grimsi/gameyfin.git</connection>
-        <url>scm:git:https://github.com/grimsi/gameyfin.git</url>
-        <developerConnection>scm:git:https://github.com/grimsi/gameyfin.git</developerConnection>
+        <connection>scm:git:https://github.com/dantedaemon/gameyfin.git</connection>
+        <url>scm:git:https://github.com/dantedaemon/gameyfin.git</url>
+        <developerConnection>scm:git:https://github.com/dantedaemon/gameyfin.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
   
     <properties>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.organization>grimsi-github</sonar.organization>
+        <sonar.organization>dantedaemon</sonar.organization>
     </properties>
 
     <build>
