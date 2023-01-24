@@ -47,6 +47,18 @@
         </mat-form-field>
       </mat-card>
 
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h3 class="filter-category-title">Show info</h3>
+        </mat-expansion-panel-header>
+
+        <div fxLayout="column">
+          <mat-checkbox [(ngModel)]="alwaysShowTitles" (change)="refreshLibraryView()" color="primary">Always
+            show titles
+          </mat-checkbox>
+        </div>
+      </mat-expansion-panel>
+
       <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" class="mat-card-48">
         <h3 class="filter-category-title" style="white-space: nowrap; padding-left: 6px">Sort by: </h3>
         <mat-select [(value)]="selectedSortOption" (valueChange)="refreshLibraryView()">

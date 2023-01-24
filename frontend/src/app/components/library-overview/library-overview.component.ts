@@ -45,6 +45,7 @@ export class LibraryOverviewComponent implements AfterContentInit {
     new SortOption("Rating (lowest first)", "totalRating", "asc")
   ];
 
+  alwaysShowTitles: boolean = false;
   searchTerm: string = "";
   selectedSortOption: SortOption = this.defaultSortOption;
   offlineCoopFilterEnabled: boolean = false;
@@ -94,6 +95,7 @@ export class LibraryOverviewComponent implements AfterContentInit {
           this.availablePlatforms = result[3];
 
           this.previousStateParams = this.route.snapshot.queryParams;
+          if (this.previousStateParams['showTitles'] !== undefined) this.alwaysShowTitles = this.matchSelectedSortOptionFromParam(this.previousStateParams['showTitles']);
           if (this.previousStateParams['search'] !== undefined) this.searchTerm = this.previousStateParams['search'];
           if (this.previousStateParams['sort'] !== undefined) this.selectedSortOption = this.matchSelectedSortOptionFromParam(this.previousStateParams['sort']);
           if (this.previousStateParams['gamemodes'] !== undefined) this.setSelectedGamemodesFromParam(this.previousStateParams['gamemodes']);
