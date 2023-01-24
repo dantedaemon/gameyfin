@@ -10,7 +10,7 @@ import {LibraryOverviewComponent} from '../library-overview/library-overview.com
 export class GameCoverComponent implements OnInit {
 
   @Input() game!: DetectedGameDto;
-  @Input() overview!: LibraryOverviewComponent;
+  overview: LibraryOverviewComponent;
 
   constructor() {
   }
