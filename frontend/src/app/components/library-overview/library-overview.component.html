@@ -145,7 +145,7 @@
     <div fxFlex fxLayout="column">
       <div fxFlex fxLayout="row wrap" fxLayoutGap="16px grid">
         <div *ngFor="let game of games">
-          <game-cover [game]="game"></game-cover>
+          <game-cover [game]="game" [alwaysShowTitles]="alwaysShowTitles"></game-cover>
         </div>
       </div>
       <div fxFlex><!--SPACER--></div>

@@ -228,6 +228,7 @@ export class LibraryOverviewComponent implements AfterContentInit {
   private saveStateToRoute(): void {
     let newStateParams: Params = {};
 
+    if (this.alwaysShowTitles) newStateParams['showTitles'] = this.alwaysShowTitles;
     if (this.searchTerm.trim().length > 0) newStateParams['search'] = this.searchTerm;
     if (this.selectedSortOption !== this.defaultSortOption) newStateParams['sort'] = LibraryOverviewComponent.toParam(this.selectedSortOption);
     if (this.getActiveGameModesFilters().length > 0) newStateParams['gamemodes'] = this.getActiveGameModesFilters().join(',');

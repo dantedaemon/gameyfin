@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DetectedGameDto} from "../../models/dtos/DetectedGameDto";
-import {LibraryOverviewComponent} from '../library-overview/library-overview.component';
 
 @Component({
   selector: 'game-cover',
@@ -10,14 +9,12 @@ import {LibraryOverviewComponent} from '../library-overview/library-overview.com
 export class GameCoverComponent implements OnInit {
 
   @Input() game!: DetectedGameDto;
-  @Input() overview!: LibraryOverviewComponent;
+  @Input() alwaysShowTitles = true;
 
   constructor() {
-    console.log('overview');
   }
 
   ngOnInit(): void {
-    console.log(this.overview);
   }
 
 }
