@@ -11,7 +11,7 @@ export class GameCoverComponent implements OnInit {
 
   @Input() game!: DetectedGameDto;
 
-  constructor(private libraryOverview: LibraryOverviewComponent) {}
+  constructor(libraryOverview: LibraryOverviewComponent) {}
 
   ngOnInit(): void {
   }
