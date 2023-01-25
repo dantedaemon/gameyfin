@@ -8,7 +8,7 @@ import packageJson from 'package.json';
 })
 export class FooterComponent implements OnInit {
 
-  githubUrl: string = "https://github.com/grimsi/gameyfin";
+  githubUrl: string = "https://github.com/dantedaemon/gameyfin";
   gameyfinVersion: string = packageJson.version;
   date: Date = new Date();
 
