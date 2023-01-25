@@ -10,10 +10,14 @@ import {LibraryOverviewComponent} from '../library-overview/library-overview.com
 export class GameCoverComponent implements OnInit {
 
   @Input() game!: DetectedGameDto;
+  @Input() overview!: LibraryOverviewComponent;
 
-  constructor(libraryOverview: LibraryOverviewComponent) {}
+  constructor() {
+    console.log('overview');
+  }
 
   ngOnInit(): void {
+    console.log(this.overview);
   }
 
 }
