@@ -45,6 +45,7 @@ export class LibraryOverviewComponent implements AfterContentInit {
     new SortOption("Rating (lowest first)", "totalRating", "asc")
   ];
 
+  alwaysShowTitles: boolean = false;
   searchTerm: string = "";
   selectedSortOption: SortOption = this.defaultSortOption;
   offlineCoopFilterEnabled: boolean = false;
@@ -94,6 +95,7 @@ export class LibraryOverviewComponent implements AfterContentInit {
           this.availablePlatforms = result[3];
 
           this.previousStateParams = this.route.snapshot.queryParams;
+          if (this.previousStateParams['showTitles'] !== undefined) this.alwaysShowTitles = this.previousStateParams['showTitles'];
           if (this.previousStateParams['search'] !== undefined) this.searchTerm = this.previousStateParams['search'];
           if (this.previousStateParams['sort'] !== undefined) this.selectedSortOption = this.matchSelectedSortOptionFromParam(this.previousStateParams['sort']);
           if (this.previousStateParams['gamemodes'] !== undefined) this.setSelectedGamemodesFromParam(this.previousStateParams['gamemodes']);
@@ -226,6 +228,7 @@ export class LibraryOverviewComponent implements AfterContentInit {
   private saveStateToRoute(): void {
     let newStateParams: Params = {};
 
+    if (this.alwaysShowTitles) newStateParams['showTitles'] = this.alwaysShowTitles;
     if (this.searchTerm.trim().length > 0) newStateParams['search'] = this.searchTerm;
     if (this.selectedSortOption !== this.defaultSortOption) newStateParams['sort'] = LibraryOverviewComponent.toParam(this.selectedSortOption);
     if (this.getActiveGameModesFilters().length > 0) newStateParams['gamemodes'] = this.getActiveGameModesFilters().join(',');

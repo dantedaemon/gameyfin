@@ -9,6 +9,7 @@ import {DetectedGameDto} from "../../models/dtos/DetectedGameDto";
 export class GameCoverComponent implements OnInit {
 
   @Input() game!: DetectedGameDto;
+  @Input() alwaysShowTitles = true;
 
   constructor() {
   }
